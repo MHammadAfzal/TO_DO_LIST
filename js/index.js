@@ -36,7 +36,6 @@ function update() {
               <td>${element[1]}</td>
               <td><button class="btn btn-sm btn-primary" onclick="del(${index})">Delete</button></td>
             </tr>
-              
             `;
   });
   tableBody.innerHTML = str;
@@ -51,6 +50,7 @@ function del(itemIndex) {
   //   Delete item-index of array
   itemJsonArray.splice(itemIndex, 1);
   localStorage.setItem("itemsJson", JSON.stringify(itemJsonArray));
+  update();
 }
 function clearStorage() {
   if (confirm("Do you really want to clear?")) {
